@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { Form } from './ContactForm/Form';
 import { ContactList } from './Contacts/ContactList';
 import { Filter } from './Filter/Filter';
 import { nanoid } from 'nanoid';
 import { StyledSubTitle, StyledTitle, StyledWrapper } from 'styles/App.styled';
+import { Form } from './ContactForm/Form';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
@@ -60,7 +60,7 @@ export const App = () => {
     >
       <StyledWrapper>
         <StyledTitle>PhoneBook</StyledTitle>
-        <Form onAddContact={handleAddContact} />
+        <Form handleAddContact={handleAddContact} />
         <StyledSubTitle>Contacts</StyledSubTitle>
         <Filter inputFilterData={handleChangeFilter} filterValue={filter} />
         <ContactList
